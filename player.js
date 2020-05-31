@@ -4,7 +4,7 @@ const launchPlayer = () => {
     var AV = require('av');
     require('mp3.js');
 
-    var player = AV.Player.fromURL('https://www.youtube.com/watch?v=eHoA-W3F9hI');
+    var player = AV.Player.fromFile('monster.mp3');
 
     console.log(player);
     var bouton = document.createElement("button");
@@ -26,6 +26,7 @@ const launchPlayer = () => {
     var titre = document.createElement("p");
     document.body.appendChild(titre);
     titre.textContent = "Titre : ";
+    
 
     var auteur = document.createElement("p");
     document.body.appendChild(auteur);
@@ -38,6 +39,11 @@ const launchPlayer = () => {
     var duree = document.createElement('p');
     document.body.appendChild(duree);
     duree.innerHTML = "Durée : ";
+    /* var asset = AV.Asset.fromFile('monster.mp3');
+    asset.start();
+    asset.get('duration', function (duration) {
+        duree.textContent = duration;
+    }); */
 
     var restant = document.createElement('p');
     document.body.appendChild(restant);
